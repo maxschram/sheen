@@ -15,7 +15,7 @@ module DOM
     end
 
     def pretty_print(level = 0)
-      "  " * level + string
+      "\t" * level + string
     end
   end
   class Element < Node
@@ -31,13 +31,7 @@ module DOM
     end
 
     def pretty_print(level = 0)
-      #{"\t" * level}<#{name}#{" " unless attrs.empty?}#{format_attrs}>
-      #{children.map{ |c| c.pretty_print(level + 1)}.join("\n")}
-      #{"\t" * level}</#{name}>
-    end
-
-    def pretty_print(level = 0)
-      tabs = "  " * level
+      tabs = "\t" * level
       open_tag = "#{tabs}<#{name}#{format_attrs}>"
       child_tags = children.map { |c| c.pretty_print(level + 1)}.join("\n")
       close_tag = "#{tabs}</#{name}>"
