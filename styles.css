@@ -1,4 +1,4 @@
-div {
+div#root {
   background: green;
   width: 100px;
 }
