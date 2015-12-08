@@ -14,6 +14,10 @@ module DOM
       super([])
     end
 
+    def is_elem?
+      false
+    end
+
     def pretty_print(level = 0)
       "\t" * level + string
     end
@@ -24,6 +28,18 @@ module DOM
       @name = name
       @attrs = attrs
       super(children)
+    end
+
+    def is_elem?
+      true
+    end
+
+    def id
+      attrs[:id]
+    end
+
+    def classes
+      attr['class'].split(' ')
     end
 
     def append(node)

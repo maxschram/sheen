@@ -1,8 +1,12 @@
-div#root {
+div {
   background: green;
   width: 100px;
 }
 
 .content {
   color: red;
+}
+
+a {
+  border: 0px solid red;
 }

@@ -5,7 +5,8 @@ module CSS
   class CSSParser < ::DOM::Parser
     def self.parse(source)
       p = CSSParser.new(source)
-      p.parse_rules
+      rules = p.parse_rules
+      Stylesheet.new(rules)
     end
 
     def initialize(source)
